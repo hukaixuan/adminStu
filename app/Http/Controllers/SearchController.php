@@ -14,7 +14,8 @@ class SearchController extends Controller
     {
     	$UserName = $request->get('UserName');
     	$UNumber = $request->get('UNumber');
-    	$results = Student::where('UserName',$UserName)->where('UNumber',$UNumber)->get();   //返回一个数组，防止一个考生多张证书
+    	$IDcard = $request->get('IDcard');
+    	$results = Student::where('UserName',$UserName)->where('UNumber',$UNumber)->orWhere('IDcard',$IDcard)->get();   //返回一个数组，防止一个考生多张证书
     	return view('show')->withStudents($results);
     	
     }

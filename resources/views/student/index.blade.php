@@ -32,8 +32,9 @@
                                     <thead>
                                         <tr>
                                             <th>序号</th>
-                                            <th>准考证号</th>
                                             <th>姓名</th>
+                                            <th>准考证号</th>
+                                            <th>身份证号</th>
                                             <th>班级</th>
                                             <th>操作</th>
                                         </tr>
@@ -47,8 +48,9 @@
 
                                                 <tr>
                                                     <td>{{ $student->id }}</td>
-                                                    <td>{{ $student->UNumber }}</td>
                                                     <td>{{ $student->UserName }}</td>
+                                                    <td>{{ $student->UNumber }}</td>
+                                                    <td>{{ $student->IDcard }}</td>
                                                     <td>{{ $student->UClass }}</td>
                                                     <td>
                                                         <a href="{{ url('student/'.$student->id.'/edit') }}" class="btn btn-success">编辑</a>

@@ -26,6 +26,12 @@
 		</tbody>
 	</table>
 </html>
+@if( count($students)==0 )
+  <center><h1>请检查输入信息是否完整正确</h1></center>
+  <center><a href="{{url('/')}}">返回上一页</a></center><br>
+  <br>
+  <br>
+@endif
 <table width="778" height="200" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
   <tbody>
   @foreach($students as $student)

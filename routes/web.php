@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -26,6 +27,13 @@ Route::resource('/student', 'StudentController');
 Route::resource('/classroom', 'ClassroomController');
 
 
+
+//excel导入导出
+Route::get('excel', 'ExcelController@index');
+Route::get('excel/export','ExcelController@export');
+Route::post('excel/import','ExcelController@import');
+
+Route::post('pic/upload', 'PicController@upload');
 
 
 

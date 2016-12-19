@@ -23,7 +23,8 @@
                 <td></td>
                 <td><br><br><br>
                     <label>姓名：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label><input type="text" name="UserName"><br><br>
-                    <label>准考证号：</label><input type="text" name="UNumber">
+                    <label>准考证号：</label><input type="text" name="UNumber"><br><br>
+                    <label>身份证号：</label><input type="text" name="IDcard">
                 </td>
             </tr>
             <tr>

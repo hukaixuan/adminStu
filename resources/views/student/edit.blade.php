@@ -42,6 +42,12 @@
                                     </select>
                                 </td>
                                 <td>
+                                   <label>身份证号：</label><input type="text" name="IDcard" class="form-control" value="{{ $student->IDcard}}"> 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><label>修改准考证书</label><input type="file" accpet="image/*" name="Pic" class="form-control" value="{{ $student->Pic }}"></td>
+                                <td>
                                     <label>班级</label>
                                     <select name="UClass" class="form-control">
                                         @foreach($classrooms as $classroom)
@@ -53,10 +59,6 @@
                                         @endforeach
                                     </select>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td><label>修改准考证书</label><input type="file" accpet="image/*" name="Pic" class="form-control" value="{{ $student->Pic }}"></td>
-                                
                                 
                             </tr>
                             <!-- <tr>

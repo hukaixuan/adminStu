@@ -30,6 +30,8 @@ class StudentController extends Controller
         $numOrName = $request->numOrName;
         if (is_numeric($numOrName)) {
             $result = Student::where('UNumber',$numOrName);
+            // $result2 = Student::where('IDcard',$numOrName);
+            // dd($result);
         } else {
             $result = Student::where('UserName',$numOrName);
         }
@@ -83,6 +85,7 @@ class StudentController extends Controller
         $student = new Student;   // new Student 不是new Student()
         $student->UserName = $request->get('UserName');
         $student->UNumber = $request->get('UNumber');
+        $student->IDcard = $request->get('IDcard');
         $student->Usex = $request->get('Usex');
         $student->UClass = $request->get('UClass');
         // $student->Intime = $request->get('Intime');
@@ -156,6 +159,7 @@ class StudentController extends Controller
         $student = Student::find($id);   
         $student->UserName = $request->get('UserName');
         $student->UNumber = $request->get('UNumber');
+        $student->IDcard = $request->get('IDcard');
         $student->Usex = $request->get('Usex');
         $student->UClass = $request->get('UClass');
         // $student->Intime = $request->get('Intime');

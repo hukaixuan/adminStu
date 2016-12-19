@@ -23,6 +23,7 @@
                                 <td><label>准考证号</label><input type="text" name="UNumber" class="form-control"></td>
                             </tr>
                             <tr>
+                                <td><label>身份证号</label><input type="text" name="IDcard" class="form-control"></td>
                                 <td>                       
                                     <label>性别</label>          
                                     <select name="Usex" class="form-control">
@@ -30,6 +31,9 @@
                                         <option value="女">女</option>
                                     </select>
                                 </td>
+                            </tr>
+                            <tr>
+                                <td><label>上传准考证书</label><input type="file" accpet="image/*" name="Pic" class="form-control"></td>
                                 <td>
                                     <label>班级</label>
                                     <select name="UClass" class="form-control">
@@ -38,10 +42,6 @@
                                         @endforeach
                                     </select>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td><label>上传准考证书</label><input type="file" accpet="image/*" name="Pic" class="form-control"></td>
-                                
                             </tr>
                             <!-- <tr>
                                 <td>
