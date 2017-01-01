@@ -11,7 +11,7 @@
     {!! csrf_field() !!}
 		<div class="row">
 		  <div class="col-lg-6">
-		  	<span>请上传excel文件：</span>
+		  	<span>请上传excel文件：<a href="{{url('download/excel_template')}}">(没有excel导入模板？点击下载)</a></span>
 		    <div class="input-group">
 		      <input name="excel_file" type="file" class="form-control">
 		      <span class="input-group-btn">

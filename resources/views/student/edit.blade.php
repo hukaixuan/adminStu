@@ -35,9 +35,13 @@
                                         @if ($student->Usex == '男')
                                             <option value="男" selected="true">男</option>
                                             <option value="女">女</option>
+                                        @elseif ($student->Usex == '女')
+                                            <option value="男">男</option>
+                                            <option value="女" selected="true">女</option>
                                         @else
                                             <option value="男">男</option>
-                                            <option value="女" selected="true">女</option> 
+                                            <option value="女" >女</option>
+                                            <option selected="true" value=""></option> 
                                         @endif 
                                     </select>
                                 </td>
@@ -50,9 +54,13 @@
                                 <td>
                                     <label>班级</label>
                                     <select name="UClass" class="form-control">
+                                        @if($student->UClass == NULL)
+                                            <option value="" selected="true"></option>
+                                        @endif
                                         @foreach($classrooms as $classroom)
                                             @if ($classroom->ClassName == $student->UClass)
                                                 <option value="{{$classroom->ClassName}}" selected="true">{{$classroom->ClassName}}</option>
+                                            
                                             @else
                                                 <option value="{{$classroom->ClassName}}">{{$classroom->ClassName}}</option>
                                             @endif

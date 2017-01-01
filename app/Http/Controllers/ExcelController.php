@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Excel;
 use App\Student;
+use App\Classroom;
 
 class ExcelController extends Controller
 {
@@ -47,6 +48,13 @@ class ExcelController extends Controller
                 $student->UNumber = $stu['准考证号'];
                 $student->Usex = $stu['性别'];
                 $student->UClass = $stu['班级'];
+                if ($student->UClass != NULL) {
+                    $classroom = Classroom::where('ClassName', $student->UClass )->first();
+                    if ($classroom) {
+                        $student->Intime = $classroom->InTime;
+                        $student->Outtime = $classroom->OutTime;
+                    }
+                }
 	        	$student->Pic = 'upload/'.$stu['身份证号'].'.jpg';
 	        	$student->save();
 	        }
@@ -70,4 +78,13 @@ class ExcelController extends Controller
      //        });
      //    })->store('xls')->export('xls');
     }
+
+    //下载excel模板
+    public function download_template()
+    {
+        return response()->download('download/template.xls');
+    }
+
+
+
 }

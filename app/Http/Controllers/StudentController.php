@@ -147,9 +147,9 @@ class StudentController extends Controller
         //
         $this -> validate($request,[
                 'UserName' => 'required',
-                'UNumber' => 'required',
-                'Usex' => 'required',
-                'UClass' => 'required',
+                // 'UNumber' => 'required',
+                // 'Usex' => 'required',
+                // 'UClass' => 'required',
                 'Pic' => '',
                 'Intime' => '',
                 'Outtime' => '',
@@ -162,11 +162,11 @@ class StudentController extends Controller
         $student->IDcard = $request->get('IDcard');
         $student->Usex = $request->get('Usex');
         $student->UClass = $request->get('UClass');
-        // $student->Intime = $request->get('Intime');
-        // $student->Outtime = $request->get('Outtime');
+        //根据班级确定时间
         $classroom = Classroom::where('ClassName',$request->get('UClass'))->first();
         $student->Intime = $classroom->InTime;
         $student->Outtime = $classroom->OutTime;
+        
         $student->Utel = $request->get('Utel');
         $student->Udep = $request->get('Udep');
 
@@ -175,11 +175,11 @@ class StudentController extends Controller
             $file->store('');
             $student->Pic = 'upload/'.$file->hashName();
         }
-
+        $student->UserTest = '修改';
         if ($student->save()) {
             return redirect('student');
         } else {    
-            return redirect()->back()->withInput()->withErrors("新增失败");
+            return redirect()->back()->withInput()->withErrors("修改失败");
         }
 
     }

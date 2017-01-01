@@ -33,6 +33,9 @@ Route::get('excel', 'ExcelController@index');
 Route::get('excel/export','ExcelController@export');
 Route::post('excel/import','ExcelController@import');
 
+//下载excel模板
+Route::get('download/excel_template', 'ExcelController@download_template');
+
 Route::post('pic/upload', 'PicController@upload');
 
 

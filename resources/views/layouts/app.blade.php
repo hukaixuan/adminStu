@@ -45,6 +45,8 @@
                     &nbsp;<li><a href="{{ url('/student') }}">学生管理</a></li>
                     &nbsp;<li><a href="{{ url('/classroom') }}">班级管理</a></li>
                     <li><a href=" {{url('/excel')}} ">学生数据导入</a></li>
+                    <li><a href=" {{url('/')}} ">证书查询主页</a></li>
+
                 </ul>
 
                 <!-- Right Side Of Navbar -->
